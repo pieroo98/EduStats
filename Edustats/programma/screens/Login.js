@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { View, TextInput, StyleSheet, Image, Keyboard, ScrollView, Text, TouchableOpacity, Pressable } from 'react-native';
-import ForgotPass from './ForgotPass';
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  //const { width, height } = useWindowDimensions();
 
   return (
     <ScrollView style={{ backgroundColor: '#fff' }} >
@@ -44,7 +42,7 @@ const Login = ({ navigation }) => {
             <TouchableOpacity onPress={() =>{ navigation.navigate('forgotpass') }} >
             <Text style={styles.forgotPass} >{'Forgot Password'}</Text>
             </TouchableOpacity>
-            <Pressable>
+            <Pressable onPress={() =>{ navigation.navigate('settings',{username: email}) }}>
             <View style={{marginTop:61, borderRadius: 50, width:260, height:44, backgroundColor:'#5271ff', paddingTop: 10}} >
               <Text style={styles.login} >{'LOGIN'}</Text>
             </View>

@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Login from './screens/Login';
 import ForgotPass from './screens/ForgotPass';
 import NewAccount from './screens/NewAccount';
+import Settings from './screens/Settings';
 
 const Stack = createStackNavigator();
 
@@ -40,6 +41,16 @@ function Navigation() {
                     shadowColor: 'white',
                     elevation: 0,
                   },headerTintColor: '#5271ff',}}
+            />
+
+            <Stack.Screen
+                name="settings"
+                component={Settings}
+                options={{ headerTitleAlign: 'center',  headerStyle: {
+                    backgroundColor: 'white',
+                    shadowColor: 'white',
+                    elevation: 0,
+                  },headerTintColor: 'white',}}
             />
             
         </Stack.Navigator>
