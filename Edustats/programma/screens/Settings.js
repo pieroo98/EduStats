@@ -76,7 +76,7 @@ const Settings = ({ navigation, route }) => {
             
       </View>
     </ScrollView>
-    <Pressable style={{ backgroundColor: '#fff', alignItems: 'center' }}>
+    <Pressable style={{ backgroundColor: '#fff', alignItems: 'center' }} onPress={()=> {navigation.navigate('GraduStats',{username : route.params.username})}}>
     <View style={{marginTop:31,marginBottom:50, borderRadius: 50, width:260, height:44, backgroundColor:'#5271ff', paddingTop: 10}} >
       <Text style={styles.login} >{'SAVE & CONTINUE'}</Text>
     </View>
