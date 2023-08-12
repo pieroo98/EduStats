@@ -8,6 +8,8 @@ import NewAccount from './screens/NewAccount';
 import Settings from './screens/Settings';
 import HomePage from './screens/HomePage';
 import Statistic from './screens/Statistic';
+import Esami from './screens/Esami';
+import UserInfo from './screens/UserInfo';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
 
@@ -41,6 +43,20 @@ function Start() {
             }}
             />
             <Tab.Screen
+            name="Esami"
+            component={Esami}
+            options={{headerTitleAlign: 'center',  headerStyle: {
+                backgroundColor: '#5271ff',
+                borderBottomLeftRadius: 20,
+                borderBottomRightRadius: 20,
+                elevation: 0,
+              },headerTintColor: 'white',
+                tabBarIcon: ({ color, size }) => (
+                <Icon name="bookmark" type="font-awesome" size={size} color={color} />
+                ),
+            }}
+            />
+            <Tab.Screen
             name="Statistic"
             component={Statistic}
             options={{headerTitleAlign: 'center',  headerStyle: {
@@ -51,6 +67,20 @@ function Start() {
               },headerTintColor: 'white',
                 tabBarIcon: ({ color, size }) => (
                 <Icon name="bar-chart" type="font-awesome" size={size} color={color} />
+                ),
+            }}
+            />
+            <Tab.Screen
+            name="User"
+            component={UserInfo}
+            options={{headerTitleAlign: 'center',  headerStyle: {
+                backgroundColor: '#5271ff',
+                borderBottomLeftRadius: 20,
+                borderBottomRightRadius: 20,
+                elevation: 0,
+              },headerTintColor: 'white',
+                tabBarIcon: ({ color, size }) => (
+                <Icon name="user" type="font-awesome" size={size} color={color} />
                 ),
             }}
             />
