@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, ScrollView, Text, Pressable } from 'react-native';
+import { View, StyleSheet, ScrollView, Text } from 'react-native';
 import { ProgressChart} from "react-native-chart-kit";
 import { Dimensions } from "react-native";
+import { ART } from 'react-native';
+const { Surface, Shape, Path } = ART;
 
-const HomePage = ({ navigation, route }) => {
+const HomePage = ({ route }) => {
   const screenWidth = Dimensions.get("window").width;
   const chartConfig = {
     color: (opacity = 1) => `rgba(82, 113, 255, ${opacity})`,
@@ -13,18 +15,18 @@ const HomePage = ({ navigation, route }) => {
     backgroundGradientToOpacity: 0,
     useShadowColorFromDataset: false // optional
   };
-  
-  
+
   const data2 = {
     labels: ["CFU"], // optional
     data: [0.48]
   };
+
   return (
     <ScrollView style={{ backgroundColor: '#fff' }} >
       <View style={{ backgroundColor: '#fff', alignItems: 'center', flex: 1 }}>
-        <Text style={styles.testoSignIn} >{'Hello, '+ `${route.params.username}`+'!'} </Text>
+        <Text style={styles.testoSignIn} >{'Hello, '+ `ciao`+'!'} </Text> 
         <Text style={styles.complete} >{'Andamento carriera'} </Text>
-        
+       
         <ProgressChart
           data={data2}
           width={screenWidth-30}
@@ -32,7 +34,7 @@ const HomePage = ({ navigation, route }) => {
           strokeWidth={20}
           radius={82}
           chartConfig={chartConfig}
-          hideLegend={false}
+          hideLegend={true}
         />
 
         <View style={{backgroundColor:'#E9E8E8', width:'90%', height:16, borderRadius:40 }} >
@@ -41,7 +43,7 @@ const HomePage = ({ navigation, route }) => {
           </View>
         </View>
 
-        <Text style={proiezione} >{'Proiezione voto di laurea:'}</Text>
+        <Text style={styles.proiezione} >{'Proiezione voto di laurea:'}</Text>
       </View>
     </ScrollView>
   );
@@ -71,7 +73,8 @@ const styles = StyleSheet.create({
     fontSize:18, 
     fontFamily:'Montserrat-Regular',
     paddingBottom: 13
-  }
+  },
+  
 });
 
 export default HomePage;
