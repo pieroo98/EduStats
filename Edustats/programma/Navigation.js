@@ -6,6 +6,7 @@ import ForgotPass from './screens/ForgotPass';
 import NewAccount from './screens/NewAccount';
 import Settings from './screens/Settings';
 import HomePage from './screens/HomePage';
+import Statistic from './screens/Statistic';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
 
@@ -74,6 +75,17 @@ function Navigation() {
                     borderBottomRightRadius: 20,
                     elevation: 0,
                   },headerTintColor: 'white',headerLeft: renderL}}
+            />
+
+            <Stack.Screen
+                name="Statistics"
+                component={Statistic}
+                options={{ headerTitleAlign: 'center',  headerStyle: {
+                    backgroundColor: '#5271ff',
+                    borderBottomLeftRadius: 20,
+                    borderBottomRightRadius: 20,
+                    elevation: 0,
+                  },headerTintColor: 'white',}}
             />
         </Stack.Navigator>
     );
