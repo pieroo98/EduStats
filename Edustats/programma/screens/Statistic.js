@@ -38,14 +38,26 @@ const Statistic = ({ navigation, route }) => {
     <ScrollView style={{ backgroundColor: '#fff' }} >
       <View style={{ backgroundColor: '#fff', alignItems: 'center', flex: 1 }}>
         <Text style={styles.testoSignIn} >{'Se da ora in poi prendi tutti 18 la tua media sarà:'} </Text>
-
+        <View style={{flexDirection:'row', alignItems:'center'}}>
+          <Text style={styles.media} >{'23.73'}</Text>
+          <Text style={styles.media2} >{'/30'}</Text>
+        </View>
+        <View style={styles.line} />
         <Text style={styles.complete} >{'Se da ora in poi prendi tutti 30 la tua media sarà:'} </Text>
-        
+        <View style={{flexDirection:'row', alignItems:'center'}}>
+          <Text style={styles.media} >{'28.12'}</Text>
+          <Text style={styles.media2} >{'/30'}</Text>
+        </View>
+        <View style={styles.line} />
+        <Text style={styles.complete} >{'andamento media'} </Text>
+
         <LineChart
           data={data}
           width={screenWidth - 10}
           height={220}
           chartConfig={chartConfig} />
+        <View style={styles.line} />
+        <Text style={styles.complete} >{'voti materie'} </Text>
 
         <BarChart
           style={{paddingBottom: 40}}
@@ -76,7 +88,31 @@ const styles = StyleSheet.create({
     fontSize:16, 
     fontFamily:'Montserrat-Regular',
     paddingBottom: 13
-  }
+  },
+  media2:{
+    color: 'black', 
+    textAlignVertical: 'auto', 
+    textAlign: 'center', 
+    fontSize:21, 
+    fontFamily:'Montserrat-Regular',
+    paddingBottom: 13
+  },
+  media:{
+    color: 'black', 
+    textAlignVertical: 'auto', 
+    textAlign: 'center', 
+    fontSize:21,
+    fontFamily:'Montserrat-Regular',
+    paddingBottom: 13
+  },
+  line: {
+    height: 1,
+    alignItems: 'center',
+    marginTop: 8, 
+    marginBottom: 10,
+    backgroundColor: 'black', 
+    width: '100%'
+}
 });
 
 export default Statistic;
