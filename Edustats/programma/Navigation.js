@@ -10,6 +10,7 @@ import HomePage from './screens/HomePage';
 import Statistic from './screens/Statistic';
 import Esami from './screens/Esami';
 import UserInfo from './screens/UserInfo';
+import AddExam from './screens/AddExam';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
 
@@ -27,7 +28,7 @@ function Start() {
         </TouchableOpacity>
     );
     return (
-        <Tab.Navigator initialRouteName={"GraduStats"} screenOptions={{ TabBarActiveTintColor: '#1976D2' }}>
+        <Tab.Navigator initialRouteName={"GraduStats"} screenOptions={{ TabBarActiveTintColor: '#1976D2', tabBarStyle: {backgroundColor: '#F0F7FD', borderTopLeftRadius: 20, borderTopRightRadius:20}, }} >
             <Tab.Screen
             name="GraduStats"
             component={HomePage}
@@ -36,7 +37,7 @@ function Start() {
                 borderBottomLeftRadius: 20,
                 borderBottomRightRadius: 20,
                 elevation: 0,
-                },headerTintColor: 'white',headerLeft: renderL,
+                },headerTintColor: 'white',headerLeft: renderL,tabBarShowLabel: false,
                 tabBarIcon: ({ color, size }) => (
                 <Icon name="home" type="font-awesome" size={size} color={color} />
                 ),
@@ -50,9 +51,29 @@ function Start() {
                 borderBottomLeftRadius: 20,
                 borderBottomRightRadius: 20,
                 elevation: 0,
-              },headerTintColor: 'white',
+              },headerTintColor: 'white',tabBarShowLabel: false,
                 tabBarIcon: ({ color, size }) => (
                 <Icon name="bookmark" type="font-awesome" size={size} color={color} />
+                ),
+            }}
+            />
+            <Tab.Screen
+            name="NewExam"
+            component={AddExam}
+            options={{headerTitleAlign: 'center',  headerStyle: {
+                backgroundColor: '#5271ff',
+                borderBottomLeftRadius: 20,
+                borderBottomRightRadius: 20,
+                elevation: 0,
+              },headerTintColor: 'white',tabBarShowLabel: false,
+                tabBarIcon: ({ color, size }) => (
+                    <View style={{ position: 'absolute',paddingBottom: 17, }}>
+                    <View style={{ backgroundColor: 'white', borderRadius: 100, marginBottom: 55, width:70, height:70 }}>
+                    <View style={{ backgroundColor: '#F0F7FD', borderRadius: 100, width:45, height:45, marginLeft: 13, marginTop:15 }}>
+                        <Icon name="plus" type="font-awesome" size={size} color={color} style={{paddingLeft:13, paddingTop:10}} />
+                        </View>
+                    </View>
+                </View>
                 ),
             }}
             />
@@ -64,7 +85,7 @@ function Start() {
                 borderBottomLeftRadius: 20,
                 borderBottomRightRadius: 20,
                 elevation: 0,
-              },headerTintColor: 'white',
+              },headerTintColor: 'white',tabBarShowLabel: false,
                 tabBarIcon: ({ color, size }) => (
                 <Icon name="bar-chart" type="font-awesome" size={size} color={color} />
                 ),
@@ -78,7 +99,7 @@ function Start() {
                 borderBottomLeftRadius: 20,
                 borderBottomRightRadius: 20,
                 elevation: 0,
-              },headerTintColor: 'white',
+              },headerTintColor: 'white',tabBarShowLabel: false,
                 tabBarIcon: ({ color, size }) => (
                 <Icon name="user" type="font-awesome" size={size} color={color} />
                 ),
